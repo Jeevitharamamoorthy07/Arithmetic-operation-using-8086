@@ -1,4 +1,4 @@
-# Arithmetic-operation-using-8086
+
 # 8086 Assembly Language Programs for Arithmetic Operations
 
 ## AIM
@@ -57,15 +57,23 @@ END
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
 | ----------------------- | ------------------------ |
-|                         |                          |
+|   1200:12               |    24:1204               |
+|   1201:34               |    68:1205               |
+|   1202:12               |    00:1206               |
+|   1203:34               |    C4:1207               |
 
 #### Manual Calculations
+![WhatsApp Image 2025-09-01 at 18 41 25_a2ac0271](https://github.com/user-attachments/assets/7746c68a-404f-46a0-864f-bfc5e9a587bc)
 
-(Add your calculation here)
 
----
 
 ## OUTPUT IMAGE FROM MASM SOFTWARE
+<img width="640" height="480" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/4859c41e-9350-47c9-b839-0400d7a6da2d" />
+
+<img width="641" height="405" alt="Screenshot 2025-08-31 134010" src="https://github.com/user-attachments/assets/460341b3-befb-4732-85ec-ecb99555a506" />
+
+
+
 
 ## 2. SUBTRACTION
 
@@ -83,23 +91,43 @@ END
 
 
 #### Program
-
-
-
+```asm
+CODE SEGMENT
+ASSUME CS: CODE, DS: CODE
+ORG 1000H
+MOV SI,2000H
+MOV CL,00H
+MOV AX,[SI]
+MOV BX,[SI+02H]
+SUB  AX,BX
+JNC L1
+INC CL
+L1:
+MOV [SI+04H],AX
+MOV [SI+06H],CL
+MOV AH,4CH
+INT 21H
+CODE ENDS
+END
+```
 #### Output Table
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
 | ----------------------- | ------------------------ |
-|                         |                          |
-
+|     1200:12             |       00:1204            |
+|     1202:34             |       00:1205            |
+|     1202:12             |       00:1206            |
+|     1202:34             |       C4:1207            |                                                
 #### Manual Calculations
 
-(Add your calculation here)
+![WhatsApp Image 2025-09-01 at 18 41 26_1a64510c](https://github.com/user-attachments/assets/368718fa-716b-4a74-b46b-7b81e98b5355)
 
----
 
 
 ## OUTPUT SCREEN FROM MASM SOFTWARE
+<img width="640" height="480" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/13e2e580-241a-4a6b-b2ae-d53ccd6b3a32" />
+
+<img width="640" height="480" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/d9b43286-c749-4af0-b8cc-cf465d5a4c95" />
 
 ## 3. MULTIPLICATION
 
@@ -139,15 +167,19 @@ END
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
 | ----------------------- | ------------------------ |
-|                         |                          |
+|     1200:12             |       44:1204            |
+|     1202:34             |       51:1205            |
+|     1202:12             |       97:1206            |
+|     1202:34             |       0A:1207            |
 
 #### Manual Calculations
 
-(Add your calculation here)
+![WhatsApp Image 2025-09-01 at 18 41 27_60e38242](https://github.com/user-attachments/assets/5da2af8e-97e7-429e-8a6d-532db4157321)
 
----
 
 ## OUTPUT SCREEN FROM MASM SOFTWARE
+<img width="640" height="480" alt="Screenshot (9)" src="https://github.com/user-attachments/assets/4f898409-c77c-41d7-b144-2a916ed4ae4d" />
+<img width="640" height="480" alt="Screenshot (7)" src="https://github.com/user-attachments/assets/73377d50-6876-495c-a953-7cb2960a5d6d" />
 
 ## 4. DIVISION
 
@@ -184,14 +216,19 @@ END
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
 | ----------------------- | ------------------------ |
-|                         |                          |
+|     1200:12             |       00:1204            |
+|     1202:34             |       01:1205            |
+|     1202:12             |       00:21206           |
+|     1202:34             |       00:1207            |
 
 #### Manual Calculations
 
-(Add your calculation here)
+![WhatsApp Image 2025-09-01 at 18 41 27_2572c34f](https://github.com/user-attachments/assets/ab62e873-28d9-4dd0-bcd1-d64fcadb6895)
 
----
 ## OUTPUT FROM MASM SOFTWARE
+
+<img width="640" height="480" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/add1c769-66c6-446d-8f46-1a675836561b" />
+<img width="640" height="480" alt="Screenshot (8)" src="https://github.com/user-attachments/assets/19a39e72-4646-442d-9ce9-b7d639db5975" />
 
 
 
